@@ -1,0 +1,17 @@
+fulfilment channel in  gfx (in gpo)
+in skus
+3pp orders starts with A
+are standalone it is not coming with any other order
+
+orders tbl system type is 3pp
+
+generally in  hybrid
+inline+parter
+
+
+partnumber,sarsku
+
+
+apj report only:ordernuber,sarsku,partnumber,orderdate
+
+
