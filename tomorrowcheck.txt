@@ -1,0 +1,154 @@
+1.temp to create for fed and nonfed
+2.purge
+3.manasa order--ddone
+4.dao si's---done but need an update from gpt
+
+exsting sub edit:working
+sailaja prod issue test
+fed private i have to change that to 
+slaman's fed changes
+
+
+
+orderdetails
+orderaddressdetails
+reportedorders
+
+
+fed has to see th nonfed and fed creategroup yes
+1.	nonfed_dao_partno--did fed
+nonfed_dao_si
+nonfed_dao_Accountno
+nonfed_dao_customerno
+
+in the UI both the user and the role i have to change it to fed
+in db:app_user and app_role to fed.
+groupname not with the si 
+
+
+
+bvk's
+domain one
+sailaja ptask
+
+
+cerate role,manage role and manage pending users
+need to check the managepending users
+
+
+cretae the group and check the data has come in tempreportkeymaster.
+fed si can be checked in the create sub and create group the same should not be seen for the non-fed user.
+
+
+salman has to do the template for approve n reject btn of both the edit and manage pending users.
+if yeswanth resolve the issue i can close the 
+STORY 9248959
+
+select is_fed_user, * from App_User where user_id=141
+update App_User set is_fed_user=1  where user_id=141
+select * from App_User_Role where App_User_Id=149
+update App_User_Role set App_Role_Id=57 where App_User_Id=149
+select * from App_Role where app_role_id=57
+update App_User set status=1 where user_id in (141)
+select * from a
+-- DELETE App_User_Role where App_User_Id in (156,155,157)
+select * from users order by 1 desc
+select * from App_User where USER_ID=87--kasi,149--bindu,147--anusha,87--salman
+select status,is_fed_user from App_User  where app_user_id=156
+--update App_User set is_fed_user=1 where app_user_id=156
+select status,* from users where User_Id in (149,148,147,22)
+select is_Fed_User,* from app_user where User_Id in (149,148,147,87)
+DELETE App_User_Role where App_User_Id in (95,155,156,157)
+DELETE App_User_Role where App_User_Id in (87)
+
+update App_User set status=0 where app_user_id in (95,155,156,157)
+
+insert into App_User (User_Id,Region_bits,BU_bits,Application_Id,Valid_From,Valid_To,[Status],Created_by,Created_On,Modified_By,Modified_On)
+values(144,7,'',1,'','',0,'CSRDEV',getdate(),'',getdate())
+
+    insert into App_User_Role (App_User_Id,App_Role_Id,[Status],Created_by,Created_On,Modified_By,Modified_On)
+values(22,2,1,'CSRDEV',getdate(),'',getdate())
+
+
+userrole
+app_user
+user ok
+
+--non_fed:
+select *  from users u ,app_user au, app_user_role aur ,app_role ar,role r
+where    au.user_id= u.user_id and aur.app_user_id = au.app_user_id and aur.App_Role_Id=ar.App_Role_Id and
+  ar.role_id = r.role_id and ar.is_Fed_Role = 0 and ar.isAdmin=-1 and au.status =1; 
+--  fed:
+select *  from users u ,app_user au, app_user_role aur ,app_role ar,role r
+where    au.user_id= u.user_id and aur.app_user_id = au.app_user_id and aur.App_Role_Id=ar.App_Role_Id and
+  ar.role_id = r.role_id and ar.is_Fed_Role = 1 and ar.isAdmin=-4 and au.status =1; 
+
+
+after salman fixes i have to close the userstories:
+mail sent issues
+yeswanth:
+mail sent ordersearch and all--ask 9251708,9257379
+bvk
+1.session timeout sent mail check.
+2.decommision
+
+TODO LIST FOR NOV RELEASE
+
+sailaja told one change that i have to do.order should not go to nonfed user whn both the si's are selected -->neddto chekc 
+
+agedorderserach:
+select ReportedOn,* from IssueOrders where OrderNumber='848739058'
+update IssueOrders set reportedon=GETDATE()-2 where OrderNumber='848739058'
+
+
+
+
+bvk:
+
+
+4.purge and massage4.custom:gpt:aseertreporting--api--ask bvk,ordercontact:cswf--ask bvk
+
+manasa given 2 orders fro pef and also the apj she hasen't given.
+
+1.with sailaja UM and si:B4KC08
+2.bvk:api's
+sar and normal fed order->saradttional check is fed are not:login with nonfed and check the manage sar,it should not come.
+normal fed -->in the issue oreder search (is fed),in reported order is_fed=y,reportedorders
+isrequired check,nomail should come and should be in issueordersearch.2.uncheck the reuired in temp and reschedule the sub then mail has to go
+check for the normal order and the sar order
+check the ge1
+1.fed order from mias to csr dwn
+sarsubscription ani 
+
+
+1.issue in ge4:working
+2.edit temp and sub is working
+3.mail:working
+4.savecopy:working
+ge1 coderetrofit
+
+automation cases:
+1.create user:isfederal checkbox:9689717(doing--failing check)
+2.create role:checkbix:9689726:done
+3.cretae a fed role:9689782(done),9689783(done)
+4.edit user.9689805-->doingcheck with srini why null pointer exception for the email
+5.manage subscription:preformated edit the preformatted:9689828:done
+6.cretae preformatted from the manage pgae:9690144(done)
+7.preform adhoc,dlete disable:9690117(nullpointerexception)
+8.cretae temp is federal checkbox for dao:9690636:done
+9.n cretae role if selected the isfed chekbox then gl and the manageftp sould be disabled.9690649:done
+
+cerate a sub scriton for regression
+
+on 4thnov
+do the ge3 
+sar report generation
+ui
+
+
+
+on 6thjune:
+sailaja's xml
+pef 
+decomsion
+Yeswanth's
